@@ -1,45 +1,25 @@
-import React from 'react'
-import Home from './pages/Home'
-import { Route, Routes } from 'react-router-dom'
-import StaggeredMenu from './components/StaggeredMenu'
-import logo from './assets/logo/image.png'
+import { useState, useEffect } from "react";
+import LoadingScreen from "./components/LoadingScreen";
+import Navbar from "./components/Navbar";
 
-const menuItems = [
-  { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
-  { label: 'About', ariaLabel: 'Learn about us', link: '/about' },
-  { label: 'Services', ariaLabel: 'View our services', link: '/services' },
-  { label: 'Contact', ariaLabel: 'Get in touch', link: '/contact' }
-];
+import Home from "./pages/Home";
 
-const socialItems = [
-  { label: 'Twitter', link: 'https://twitter.com' },
-  { label: 'GitHub', link: 'https://github.com' },
-  { label: 'LinkedIn', link: 'https://linkedin.com' }
-];
+function App() {
+  const [loading, setLoading] = useState(true);
 
-const App = () => {
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) return <LoadingScreen />;
+
   return (
-    
-       <div style={{ height: '100vh', background: '#1a1a1a' }}>
-  <StaggeredMenu
-    position="right"
-    items={menuItems}
-    socialItems={socialItems}
-    displaySocials={true}
-    displayItemNumbering={true}
-    menuButtonColor="#fff"
-    openMenuButtonColor="#fff"
-    changeMenuColorOnOpen={true}
-    colors={['#B19EEF', '#5227FF']}
-    logoUrl="/path-to-your-logo.svg"
-    accentColor="#ff6b6b"
-    onMenuOpen={() => console.log('Menu opened')}
-    onMenuClose={() => console.log('Menu closed')}
-  />
-  <Home />
-</div>
+    <div className="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-500">
       
-  )
+      <Home/>
+    </div>
+  );
 }
 
-export default App
+export default App;
