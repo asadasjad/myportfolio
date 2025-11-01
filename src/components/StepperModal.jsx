@@ -28,7 +28,7 @@ export default function StepperModal({ position = "center", label = "Let’s Col
       {/* CTA Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="shiny-btn px-6 py-3 shadow-[0_10px_6px_rgba(137, 90, 255,0.3)] rounded-full bg-[#6f43dd] hover:bg-[#7d4aff] hover:shadow-[inset_0_1.5px_0px_rgba(255,255,255,0.2)] text-white font-semibold    transition-all hover:scale-105 "
+        className="shiny-btn px-6 py-3 shadow-[0_10px_6px_rgba(137, 90, 255,0.3)] rounded-full bg-[#6f43dd] hover:bg-[#7d4aff] hover:shadow-[inset_0_1.5px_0px_rgba(255,255,255,0.2)] text-white font-semibold     hover:scale-105 transition-all"
       >
         {label}
       </button>
