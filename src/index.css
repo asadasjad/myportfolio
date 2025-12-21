@@ -166,3 +166,15 @@
     @apply bg-background text-foreground;
   }
 }
+html {
+  font-family: "InterVariable", "Inter", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+body {
+  cursor: default;
+}
+
+a,
+button {
+  cursor: pointer;
+}

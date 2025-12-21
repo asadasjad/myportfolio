@@ -56,9 +56,9 @@ const imageLogos = [
 const Home = () => {
   return (
     <div className=''>
-      <Navbar />
+      
 
-      <section className=''>
+      <section className='min-h-[75vh] flex items-center justify-center px-4'>
         <Hero />
       </section>
 

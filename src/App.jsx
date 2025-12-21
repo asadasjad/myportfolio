@@ -1,28 +1,20 @@
-import { useState, useEffect } from "react";
-import LoadingScreen from "./components/LoadingScreen";
+import { motion } from "motion/react";
 import Navbar from "./components/Navbar";
-
 import Home from "./pages/Home";
 
-function App() {
-  const [loading, setLoading] = useState(true);
 
-
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) return <LoadingScreen />;
-
+export default function App() {
   return (
-    <div className="bg-white text-gray-900     dark:text-white transition-colors duration-500">
-     
+    <motion.main
+      initial={{ opacity: 0, y: 6 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.4,
+        ease: "easeOut",
+      }}
+    >
+      <Navbar/>
       <Home/>
-      
-    </div>
+    </motion.main>
   );
 }
-
-export default App;
