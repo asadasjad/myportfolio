@@ -1,92 +1,109 @@
 import Hero from '../components/Hero'
-import About from '../components/About'
+
 
 import Footer from '../components/Footer'
 import Projects from '../components/Projects'
-import Navbar from '../components/Navbar'
+
 import LogoLoop from '../components/LogoLoop'
-import {
-  SiReact,
-  SiTailwindcss,
-  SiVercel,
-  SiJavascript,
-  SiGithub,
-  SiFigma,
-} from 'react-icons/si'
-import StepperModal from '../components/StepperModal'
+
+
 import Configurator from '../components/Configurator'
 import PortfolioPricingConfigurator from '../components/PortfolioPricingConfiugrator'
-const techLogos = [
-  { node: <SiReact />, title: 'React', href: 'https://react.dev' },
-  { node: <SiVercel />, title: 'Vercel', href: 'https://vercel.com/' },
+import {
+  SiReact,
+  SiJavascript,
+  SiReactrouter,
+  SiFramer,
+  SiTailwindcss,
+  SiVite,
+  SiGithub,
+  SiVercel,
+  SiFigma,
+} from "react-icons/si";
 
+const techLogos = [
   {
-    node: <SiTailwindcss />,
-    title: 'Tailwind CSS',
-    href: 'https://tailwindcss.com',
+    node: <SiReact />,
+    title: "React",
+    href: "https://react.dev",
   },
   {
     node: <SiJavascript />,
-    title: 'JavaScript',
-    href: 'https://www.javascript.com/',
+    title: "JavaScript",
+    href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
   },
-  { node: <SiGithub />, title: 'GitHub', href: 'https://tailwindcss.com' },
-  { node: <SiFigma />, title: 'Figma ', href: 'https://tailwindcss.com' },
-]
+  {
+    node: <SiReactrouter />,
+    title: "React Router",
+    href: "https://reactrouter.com",
+  },
+  {
+    node: <SiFramer />,
+    title: "Framer Motion",
+    href: "https://www.framer.com/motion/",
+  },
+  {
+    node: <SiTailwindcss />,
+    title: "Tailwind CSS",
+    href: "https://tailwindcss.com",
+  },
+  {
+    node: <SiVite />,
+    title: "Vite",
+    href: "https://vitejs.dev",
+  },
+  {
+    node: <SiGithub />,
+    title: "GitHub",
+    href: "https://github.com",
+  },
+  {
+    node: <SiVercel />,
+    title: "Vercel",
+    href: "https://vercel.com",
+  },
+  {
+    node: <SiFigma />,
+    title: "Figma",
+    href: "https://www.figma.com",
+  },
+];
 
-// Alternative with image sources
-const imageLogos = [
-  {
-    src: '/logos/company1.png',
-    alt: 'Company 1',
-    href: 'https://company1.com',
-  },
-  {
-    src: '/logos/company2.png',
-    alt: 'Company 2',
-    href: 'https://company2.com',
-  },
-  {
-    src: '/logos/company3.png',
-    alt: 'Company 3',
-    href: 'https://company3.com',
-  },
-]
+
 
 const Home = () => {
   return (
     <div className=''>
-      
-
       <section className='min-h-[75vh] flex items-center justify-center px-4'>
         <Hero />
       </section>
 
-      
-
       <Projects />
-      <section>
-        {' '}
-        <div
-          style={{ height: '300px', position: 'relative', overflow: 'hidden' }}
-        >
-          <LogoLoop
-            className='text-[#64748b]'
-            logos={techLogos}
-            speed={80}
-            direction='left'
-            logoHeight={60}
-            gap={80}
-            pauseOnHover
-            scaleOnHover
-            fadeOut
-            fadeOutColor='#ffffff'
-            ariaLabel='Technology partners'
-          />
-        </div>
-      </section>
+      <section className="mt-20 mb-12 text-center">
+  <p className="text-xs uppercase tracking-wide text-slate-400 mb-2">
+    Tools & Technologies
+  </p>
+
+  <p className="text-sm text-slate-500 mb-6 max-w-xl mx-auto">
+    Tools & technologies I use to design, build, and ship products.
+  </p>
+
+  <LogoLoop
+    className="text-slate-400"
+    logos={techLogos}
+    speed={30}
+    direction="left"
+    logoHeight={40}
+    gap={56}
+    pauseOnHover
+    fadeOut
+    fadeOutColor="#ffffff"
+    ariaLabel="Tools and technologies I work with"
+  />
+</section>
+
       <Configurator />
-      <PortfolioPricingConfigurator/>
+      <PortfolioPricingConfigurator />
       <Footer />
     </div>
   )

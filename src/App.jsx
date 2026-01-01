@@ -1,20 +1,18 @@
-import { motion } from "motion/react";
-import Navbar from "./components/Navbar";
+import { Routes, Route } from "react-router-dom";
+import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
-
+import FeedbackDashboardCaseStudy from "./components/FeedbackDashboard";
 
 export default function App() {
   return (
-    <motion.main
-      initial={{ opacity: 0, y: 6 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.4,
-        ease: "easeOut",
-      }}
-    >
-      <Navbar/>
-      <Home/>
-    </motion.main>
+    <Routes>
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/projects/feedback-dashboard"
+          element={<FeedbackDashboardCaseStudy />}
+        />
+      </Route>
+    </Routes>
   );
 }
