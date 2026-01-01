@@ -7,8 +7,7 @@ import Projects from '../components/Projects'
 import LogoLoop from '../components/LogoLoop'
 
 
-import Configurator from '../components/Configurator'
-import PortfolioPricingConfigurator from '../components/PortfolioPricingConfiugrator'
+
 import {
   SiReact,
   SiJavascript,
@@ -20,6 +19,8 @@ import {
   SiVercel,
   SiFigma,
 } from "react-icons/si";
+import About from '@/components/About'
+import Contact from '@/components/Contact'
 
 const techLogos = [
   {
@@ -80,13 +81,7 @@ const Home = () => {
 
       <Projects />
       <section className="mt-20 mb-12 text-center">
-  <p className="text-xs uppercase tracking-wide text-slate-400 mb-2">
-    Tools & Technologies
-  </p>
-
-  <p className="text-sm text-slate-500 mb-6 max-w-xl mx-auto">
-    Tools & technologies I use to design, build, and ship products.
-  </p>
+  
 
   <LogoLoop
     className="text-slate-400"
@@ -100,10 +95,18 @@ const Home = () => {
     fadeOutColor="#ffffff"
     ariaLabel="Tools and technologies I work with"
   />
-</section>
+  <p className="text-sm text-slate-500 mt-6 max-w-xl mx-auto">
+    Tools & technologies I use to design, build, and ship products.
+  </p>
+  <p className="text-xs uppercase tracking-wide text-slate-400 mt-2">
+    Tools & Technologies
+  </p>
 
-      <Configurator />
-      <PortfolioPricingConfigurator />
+  
+</section>
+<About />
+<Contact />
+      
       <Footer />
     </div>
   )
