@@ -65,9 +65,9 @@ export default function Hero() {
         <div className="relative lg:min-h-[440px] flex items-center justify-center">
           <div className="absolute inset-4 sm:inset-10 bg-indigo-100/70 rounded-[2.5rem] blur-3xl" />
 
-          <button
-            onClick={() => scrollTo("projects")}
-            className="group relative w-full max-w-[31rem] overflow-hidden rounded-[1.6rem] border border-slate-200 bg-white p-3 sm:p-4 text-left shadow-xl shadow-slate-900/10 transition-all duration-500 hover:-translate-y-2 hover:shadow-slate-900/15"
+          <a
+            href="/projects/uniway"
+            className="group relative block w-full max-w-[31rem] overflow-hidden rounded-[1.6rem] border border-slate-200 bg-white p-3 sm:p-4 text-left shadow-xl shadow-slate-900/10 transition-all duration-500 hover:-translate-y-2 hover:shadow-slate-900/15"
           >
             <div className="aspect-[4/3] rounded-[1.25rem] bg-slate-950 p-5 sm:p-7 flex flex-col justify-between overflow-hidden">
               <div className="flex items-center justify-between">
@@ -99,7 +99,7 @@ export default function Hero() {
                 Project in progress
               </span>
             </div>
-          </button>
+          </a>
         </div>
       </div>
     </section>

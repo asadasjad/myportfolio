@@ -17,7 +17,7 @@ const artGalleryCaseStudy = {
   ],
 
   githubUrl: null,
-  liveUrl: null,
+  liveUrl: "https://offfgrid-green.vercel.app/",
 
   sections: [
     {

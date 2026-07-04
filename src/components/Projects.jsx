@@ -8,25 +8,28 @@ const projects = [
       "A mobile-first campus navigation product built to make finding buildings, rooms, and routes feel effortless.",
     tags: ["Next.js", "TypeScript", "Product Design", "Maps"],
     caseStudyLink: "/projects/uniway",
+    liveLink: "https://frontend-nu-five-78.vercel.app/",
     status: "In progress",
     eyebrow: "Campus navigation · Product build",
   },
   {
-    title: "Product Feedback Intelligence Dashboard",
+    title: "Feedback Dashboard",
     description:
       "An analytics tool that turns raw customer feedback into clear, actionable product insights.",
     tags: ["React", "Tailwind CSS", "Recharts", "UX Design"],
     caseStudyLink: "/projects/feedback-dashboard",
     githubLink: "https://github.com/asadasjad/feedback-insight-dashboard.git",
+    liveLink: "https://insight-dashboard-alpha.vercel.app/",
     eyebrow: "Analytics · Case study",
   },
   {
-    title: "3D Art Gallery",
+    title: "UI Gallery",
     description:
-      "An immersive interface experiment exploring spatial browsing, visual hierarchy, and interaction in a 3D gallery.",
+      "An immersive interface experience exploring spatial browsing, visual hierarchy, and interaction in a 3D gallery.",
     tags: ["React", "3D UI", "Interaction Design"],
     caseStudyLink: "/projects/art-gallery",
     githubLink: "https://github.com/asadasjad/3d-art-gallery",
+    liveLink: "https://offfgrid-green.vercel.app/",
     eyebrow: "UI experiment · Spatial interface",
   },
 ];
@@ -88,6 +91,7 @@ export default function Projects() {
                   tags={project.tags}
                   caseStudyLink={project.caseStudyLink}
                   githubLink={project.githubLink}
+                  liveLink={project.liveLink}
                   eyebrow={project.eyebrow}
                   status={project.status}
                   featured={i === 0}

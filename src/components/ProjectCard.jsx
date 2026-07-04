@@ -6,6 +6,7 @@ export default function ProjectCard({
   tags = [],
   caseStudyLink,
   githubLink,
+  liveLink,
   eyebrow,
   status,
   featured = false,
@@ -90,14 +91,14 @@ export default function ProjectCard({
             </Link>
           )}
 
-          {githubLink && (
+          {liveLink && (
             <a
-              href={githubLink}
+              href={liveLink}
               target="_blank"
               rel="noopener noreferrer"
               className="group/link inline-flex min-h-11 items-center justify-between gap-5 rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-medium text-slate-600 transition-all duration-300 hover:border-slate-400 hover:text-slate-950 hover:px-6"
             >
-              GitHub
+              Explore live
               <span className="transition-transform duration-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-1">↗</span>
             </a>
           )}

@@ -17,7 +17,7 @@ const uniWayCaseStudy = {
   ],
 
   githubUrl: null,
-  liveUrl: null,
+  liveUrl: "https://frontend-nu-five-78.vercel.app/",
 
   sections: [
     {
