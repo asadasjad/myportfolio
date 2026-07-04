@@ -25,6 +25,8 @@ const projects = [
     description:
       "An immersive interface experiment exploring spatial browsing, visual hierarchy, and interaction in a 3D gallery.",
     tags: ["React", "3D UI", "Interaction Design"],
+    caseStudyLink: "/projects/art-gallery",
+    githubLink: "https://github.com/asadasjad/3d-art-gallery",
     eyebrow: "UI experiment · Spatial interface",
   },
 ];
