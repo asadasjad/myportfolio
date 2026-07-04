@@ -1,60 +1,67 @@
 import CaseStudyLayout from "../components/CaseStudyLayout";
 
+const feedbackDashboardCaseStudy = {
+  eyebrow: "Product analytics · Case study",
+  title: "Turning noisy feedback into product direction.",
+  projectName: "Product Feedback Intelligence Dashboard",
+  summary:
+    "An internal analytics tool that transforms unstructured customer feedback into clear, actionable signals — without making teams dig through hundreds of comments.",
+  meta: [
+    { label: "Role", value: "Product design · Frontend" },
+    { label: "Focus", value: "Analysis · UX · Data UI" },
+    { label: "Stack", value: "React · Tailwind · Recharts" },
+  ],
+  sections: [
+    {
+      heading: "The situation",
+      body:
+        "Product teams collect feedback everywhere: reviews, surveys, support messages, and internal notes. The problem is rarely a lack of feedback. It is finding the signal inside all that noise before an important pattern gets missed.",
+    },
+    {
+      heading: "What needed fixing",
+      list: [
+        "Feedback arrived unstructured and scattered across sources",
+        "Recurring complaints were difficult to identify at scale",
+        "High-volume noise could hide smaller but important signals",
+        "Teams needed answers quickly, not another dashboard to decipher",
+      ],
+    },
+    {
+      heading: "The idea",
+      body:
+        "I designed and built a focused internal dashboard where teams can bring in raw feedback, classify sentiment, surface recurring complaints, and spot feature requests in a format that is deliberately easy to scan.",
+    },
+    {
+      heading: "Designing for decisions",
+      body:
+        "The interface avoids visual noise on purpose. Strong hierarchy separates the headline signal from supporting detail, restrained charts make patterns legible at a glance, and progressive disclosure keeps secondary information available without letting it dominate the page.",
+    },
+    {
+      heading: "How I built it",
+      list: [
+        "React + Vite for a fast, component-driven frontend",
+        "Tailwind CSS for a consistent visual system and rapid iteration",
+        "Recharts for lightweight, readable data visualisation",
+        "Transparent keyword-based analysis rather than pretending a simple prototype had perfect AI understanding",
+      ],
+    },
+    {
+      heading: "The tradeoff",
+      body:
+        "The analysis is intentionally simple and explainable, but that comes with limits. Keyword matching misses nuance, sentiment is high-level, and phrasing can affect accuracy. For this version, I preferred transparent behaviour over a black-box result that looked more intelligent than it really was.",
+    },
+    {
+      heading: "Where I’d take it next",
+      list: [
+        "Sentence-level sentiment analysis for mixed feedback",
+        "Trend views to show how complaints change over time",
+        "Confidence scoring so uncertain classifications are visible",
+        "Source comparison across reviews, surveys, and support channels",
+      ],
+    },
+  ],
+};
+
 export default function FeedbackDashboardCaseStudy() {
-  return (
-    <CaseStudyLayout
-      title="Product Feedback Intelligence Dashboard"
-      summary="An internal analytics tool that transforms unstructured customer feedback into clear, actionable insights through structured analysis and calm, professional UI design."
-      sections={[
-        {
-          heading: "Context",
-          body:
-            "Product teams receive large volumes of qualitative feedback from reviews, surveys, and support messages. Extracting consistent insights from this data is time-consuming and error-prone when done manually.",
-        },
-        {
-          heading: "Problem",
-          list: [
-            "Feedback is unstructured and scattered",
-            "Patterns are difficult to identify at scale",
-            "Important signals are often missed",
-          ],
-        },
-        {
-          heading: "Solution",
-          body:
-            "I designed and built an internal dashboard that allows teams to paste raw feedback, automatically classify sentiment, and surface recurring complaints and feature requests in a clear, scannable format.",
-        },
-        {
-          heading: "Design Approach",
-          body:
-            "The interface prioritizes clarity and restraint. Visual hierarchy, generous whitespace, and subtle depth cues are used to reduce cognitive load and make insights easy to scan.",
-        },
-        {
-          heading: "Technical Implementation",
-          list: [
-            "React + Vite for fast iteration",
-            "Tailwind CSS for consistent styling",
-            "Recharts for lightweight data visualization",
-            "Keyword-based analysis for transparency and simplicity",
-          ],
-        },
-        {
-          heading: "Tradeoffs & Limitations",
-          list: [
-            "Keyword analysis lacks nuanced language understanding",
-            "Sentiment is calculated at a high level",
-            "Language-specific phrasing affects accuracy",
-          ],
-        },
-        {
-          heading: "What I’d Improve Next",
-          list: [
-            "Sentence-level sentiment analysis",
-            "Trend analysis over time",
-            "Confidence scoring for sentiment results",
-          ],
-        },
-      ]}
-    />
-  );
+  return <CaseStudyLayout {...feedbackDashboardCaseStudy} />;
 }
