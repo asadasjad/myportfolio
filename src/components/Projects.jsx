@@ -36,24 +36,24 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="relative overflow-hidden px-5 sm:px-8 lg:px-12 py-24 sm:py-32">
-      <div className="pointer-events-none absolute -left-24 top-44 h-72 w-72 rounded-full bg-indigo-100/60 blur-3xl" />
-      <div className="pointer-events-none absolute -right-32 bottom-40 h-80 w-80 rounded-full bg-slate-100 blur-3xl" />
+    <section id="projects" className="relative overflow-hidden px-5 sm:px-8 lg:px-12 py-20 sm:py-32">
+      <div className="pointer-events-none absolute -left-32 top-36 h-64 w-64 sm:-left-24 sm:top-44 sm:h-72 sm:w-72 rounded-full bg-indigo-100/45 sm:bg-indigo-100/60 blur-3xl" />
+      <div className="pointer-events-none absolute -right-40 bottom-32 h-72 w-72 sm:-right-32 sm:bottom-40 sm:h-80 sm:w-80 rounded-full bg-slate-100 blur-3xl" />
       <div className="relative max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true, amount: 0.3 }}
-          className="mb-14 sm:mb-20 lg:mb-24"
+          className="mb-12 sm:mb-20 lg:mb-24"
         >
-          <p className="mb-4 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-indigo-600">
+          <p className="mb-3 sm:mb-4 text-[9px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-indigo-600">
             Selected work
           </p>
 
-          <h2 className="max-w-3xl text-[2.7rem] sm:text-[3.6rem] lg:text-[4.25rem] font-bold tracking-[-0.05em] leading-[0.98] text-slate-950">
+          <h2 className="max-w-3xl text-[2.55rem] sm:text-[3.6rem] lg:text-[4.25rem] font-bold tracking-[-0.055em] sm:tracking-[-0.05em] leading-[0.94] sm:leading-[0.98] text-slate-950">
             Things I&apos;ve
-            <span className="block sm:ml-[12%]">
+            <span className="block ml-[7%] sm:ml-[12%]">
               <span className="mr-2 sm:mr-3 font-serif italic font-normal tracking-[-0.025em] text-slate-500">
                 actually
               </span>
@@ -61,25 +61,25 @@ export default function Projects() {
             </span>
           </h2>
 
-          <p className="mt-7 sm:mt-9 max-w-md ml-auto lg:mr-[8%] text-[0.95rem] sm:text-base leading-7 text-slate-600">
+          <p className="mt-6 sm:mt-9 max-w-[19rem] sm:max-w-md ml-[12%] sm:ml-auto lg:mr-[8%] text-[0.82rem] sm:text-base leading-[1.65] sm:leading-7 text-slate-600">
             A selection of products and interfaces where I&apos;ve worked through
             real problems — from product thinking to the final interaction.
           </p>
         </motion.div>
 
-        <div className="space-y-8 sm:space-y-12 lg:space-y-20">
+        <div className="space-y-6 sm:space-y-12 lg:space-y-20">
           {projects.map((project, i) => {
             const layoutClass =
               i === 0
                 ? "w-full lg:w-[88%]"
                 : i === 1
-                  ? "w-full md:w-[72%] lg:w-[64%] ml-auto"
-                  : "w-full md:w-[68%] lg:w-[58%] md:ml-[7%]";
+                  ? "w-[94%] ml-auto md:w-[72%] lg:w-[64%]"
+                  : "w-[92%] mr-auto md:w-[68%] lg:w-[58%] md:ml-[7%]";
 
             return (
               <motion.div
                 key={project.title}
-                initial={{ opacity: 0, y: 32, rotate: i === 1 ? 0.6 : i === 2 ? -0.5 : 0 }}
+                initial={{ opacity: 0, y: 24, rotate: i === 1 ? 0.6 : i === 2 ? -0.5 : 0 }}
                 whileInView={{ opacity: 1, y: 0, rotate: 0 }}
                 transition={{ duration: 0.65, delay: i * 0.08 }}
                 viewport={{ once: true, amount: 0.2 }}

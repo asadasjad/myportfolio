@@ -143,7 +143,9 @@ export const LogoLoop = memo(
     direction = 'left',
     width = '100%',
     logoHeight = 28,
+    mobileLogoHeight,
     gap = 32,
+    mobileGap,
     pauseOnHover = true,
     fadeOut = false,
     fadeOutColor,
@@ -159,6 +161,20 @@ export const LogoLoop = memo(
     const [seqWidth, setSeqWidth] = useState(0);
     const [copyCount, setCopyCount] = useState(ANIMATION_CONFIG.MIN_COPIES);
     const [isHovered, setIsHovered] = useState(false);
+
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      const mq = window.matchMedia('(max-width: 639px)');
+      const update = () => setIsMobile(mq.matches);
+
+      update();
+      mq.addEventListener('change', update);
+      return () => mq.removeEventListener('change', update);
+    }, []);
+
+    const resolvedLogoHeight = isMobile && mobileLogoHeight != null ? mobileLogoHeight : logoHeight;
+    const resolvedGap = isMobile && mobileGap != null ? mobileGap : gap;
 
     const targetVelocity = useMemo(() => {
       const magnitude = Math.abs(speed);
@@ -178,19 +194,19 @@ export const LogoLoop = memo(
       }
     }, []);
 
-    useResizeObserver(updateDimensions, [containerRef, seqRef], [logos, gap, logoHeight]);
+    useResizeObserver(updateDimensions, [containerRef, seqRef], [logos, resolvedGap, resolvedLogoHeight]);
 
-    useImageLoader(seqRef, updateDimensions, [logos, gap, logoHeight]);
+    useImageLoader(seqRef, updateDimensions, [logos, resolvedGap, resolvedLogoHeight]);
 
     useAnimationLoop(trackRef, targetVelocity, seqWidth, isHovered, pauseOnHover);
 
     const cssVariables = useMemo(
       () => ({
-        '--logoloop-gap': `${gap}px`,
-        '--logoloop-logoHeight': `${logoHeight}px`,
+        '--logoloop-gap': `${resolvedGap}px`,
+        '--logoloop-logoHeight': `${resolvedLogoHeight}px`,
         ...(fadeOutColor && { '--logoloop-fadeColor': fadeOutColor })
       }),
-      [gap, logoHeight, fadeOutColor]
+      [resolvedGap, resolvedLogoHeight, fadeOutColor]
     );
 
     const rootClasses = useMemo(

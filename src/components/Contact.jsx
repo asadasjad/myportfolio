@@ -16,21 +16,21 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden px-5 sm:px-8 lg:px-12 py-24 sm:py-32 bg-slate-950 text-white"
+      className="relative overflow-hidden px-5 sm:px-8 lg:px-12 py-16 sm:py-32 bg-slate-950 text-white"
     >
-      <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-indigo-500/20 blur-3xl" />
-      <div className="pointer-events-none absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
+      <div className="pointer-events-none absolute -right-40 -top-28 h-72 w-72 sm:-right-24 sm:-top-24 sm:h-80 sm:w-80 rounded-full bg-indigo-500/15 sm:bg-indigo-500/20 blur-3xl" />
+      <div className="pointer-events-none absolute -left-48 bottom-0 h-72 w-72 sm:-left-40 sm:h-80 sm:w-80 rounded-full bg-white/[0.035] sm:bg-white/5 blur-3xl" />
 
       <div className="relative max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 sm:gap-16 lg:gap-24 items-end">
+        <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-10 sm:gap-16 lg:gap-24 items-end">
           <div>
-            <p className="mb-5 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-indigo-300">
+            <p className="mb-3 sm:mb-5 text-[9px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-indigo-300">
               Have something in mind?
             </p>
 
-            <h2 className="max-w-3xl text-[2.8rem] sm:text-[4rem] lg:text-[5.4rem] font-bold tracking-[-0.055em] leading-[0.92]">
+            <h2 className="max-w-3xl text-[2.65rem] sm:text-[4rem] lg:text-[5.4rem] font-bold tracking-[-0.065em] sm:tracking-[-0.055em] leading-[0.88] sm:leading-[0.92]">
               Let&apos;s make it
-              <span className="block sm:ml-[12%]">
+              <span className="block ml-[8%] sm:ml-[12%]">
                 <span className="font-serif italic font-normal tracking-[-0.025em] text-slate-400">
                   worth
                 </span>{" "}
@@ -40,15 +40,15 @@ export default function Contact() {
           </div>
 
           <div className="lg:pb-2">
-            <p className="max-w-md text-[0.95rem] sm:text-base leading-7 text-slate-400">
+            <p className="max-w-[18.5rem] sm:max-w-md ml-[10%] sm:ml-0 text-[0.8rem] sm:text-base leading-[1.7] sm:leading-7 text-slate-400">
               A product idea, an interface that needs more thought, or an
               opportunity where I can be useful — I&apos;d like to hear about it.
             </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3">
+            <div className="mt-7 sm:mt-8 grid grid-cols-2 sm:flex sm:flex-row lg:flex-col xl:flex-row gap-2.5 sm:gap-3">
               <button
                 onClick={handleCopy}
-                className="group relative overflow-hidden inline-flex min-h-12 items-center justify-between gap-8 px-5 py-2 rounded-full bg-indigo-500 text-white text-sm font-medium transition-all duration-300 hover:bg-indigo-400 hover:px-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-300"
+                className="group relative overflow-hidden inline-flex min-h-11 sm:min-h-12 items-center justify-between gap-3 sm:gap-8 px-4 sm:px-5 py-2 rounded-full bg-indigo-500 text-white text-[0.72rem] sm:text-sm font-medium transition-all duration-300 hover:bg-indigo-400 sm:hover:px-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-300"
               >
                 <AnimatePresence mode="wait" initial={false}>
                   {!copied ? (
@@ -82,7 +82,7 @@ export default function Contact() {
                 href="https://github.com/asadasjad"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex min-h-12 items-center justify-between gap-8 px-5 py-2 rounded-full border border-white/20 text-slate-200 text-sm font-medium transition-all duration-300 hover:border-white/40 hover:bg-white/5 hover:px-6"
+                className="group inline-flex min-h-11 sm:min-h-12 items-center justify-between gap-3 sm:gap-8 px-4 sm:px-5 py-2 rounded-full border border-white/20 text-slate-200 text-[0.72rem] sm:text-sm font-medium transition-all duration-300 hover:border-white/40 hover:bg-white/5 sm:hover:px-6"
               >
                 GitHub
                 <span className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
@@ -93,12 +93,12 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="mt-20 sm:mt-28 lg:mt-32 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 border-t border-white/10 pt-6">
-          <p className="max-w-sm text-xs sm:text-sm leading-6 text-slate-500">
+        <div className="mt-14 sm:mt-28 lg:mt-32 grid grid-cols-[1.15fr_0.85fr] sm:flex sm:flex-row sm:items-end sm:justify-between gap-5 sm:gap-6 border-t border-white/10 pt-5 sm:pt-6">
+          <p className="max-w-[10.5rem] sm:max-w-sm text-[0.65rem] sm:text-sm leading-[1.55] sm:leading-6 text-slate-500">
             Based in Lucknow, building for wherever the interesting problems are.
           </p>
 
-          <p className="text-[11px] sm:text-xs uppercase tracking-[0.16em] text-slate-600">
+          <p className="max-w-[8.5rem] sm:max-w-none text-right sm:text-left text-[8px] sm:text-xs uppercase leading-[1.7] tracking-[0.14em] sm:tracking-[0.16em] text-slate-600">
             Open to projects · internships · opportunities
           </p>
         </div>
